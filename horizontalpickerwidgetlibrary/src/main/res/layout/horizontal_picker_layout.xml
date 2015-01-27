@@ -1,24 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merge xmlns:android="http://schemas.android.com/apk/res/android">
-
-    <TextView
-        android:layout_width="wrap_content"
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:id="@+id/left_text"/>
+        android:layout_width="match_parent"
+        android:weightSum="10">
 
-    <TextSwitcher
-        android:layout_width="wrap_content"
-        android:layout_margin="10dp"
-        android:layout_height="wrap_content"
-        android:id="@+id/switcher">
+        <TextView
+            style="@style/sideTextViewStyle"
+            android:layout_marginRight="@dimen/divider_margin"
+            android:layout_width="0dp"
+            android:layout_weight="3"
+            android:id="@+id/left_text"/>
 
-    </TextSwitcher>
+        <TextSwitcher
+            android:textColor="@color/switcherTextColor"
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="4"
+            android:id="@+id/switcher">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_margin="10dp"
-        android:layout_height="wrap_content"
-        android:id="@+id/right_text"/>
+        </TextSwitcher>
 
+        <TextView
+            style="@style/sideTextViewStyle"
+            android:layout_width="0dp"
+            android:layout_weight="3"
+            android:layout_marginLeft="@dimen/divider_margin"
+            android:id="@+id/right_text"/>
 </merge>

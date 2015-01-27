@@ -5,7 +5,11 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import java.util.ArrayList;
+
 import ahmetkucuk.com.horizontalpickerwidgetlibrary.HorizontalPickerWidget;
+import ahmetkucuk.com.horizontalpickerwidgetlibrary.adapter.DefaultHorizontalPickerAdapter;
+import ahmetkucuk.com.horizontalpickerwidgetlibrary.adapter.HorizontalPickerAdapter;
 
 
 public class HorizontalPickerSample extends ActionBarActivity {
@@ -14,8 +18,10 @@ public class HorizontalPickerSample extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_horizontal_picker_sample);
+
+        HorizontalPickerAdapter<String> adapter = new DefaultHorizontalPickerAdapter(new ArrayList<String>(){{add("Item 1"); add("Item 2"); add("Item 3"); add("Item 4");}});
         HorizontalPickerWidget horizontalPickerWidget = (HorizontalPickerWidget)findViewById(R.id.picker);
-        horizontalPickerWidget.setValues(new String[]{"Item 1", "Item 2", "Item 4"});
+        horizontalPickerWidget.setAdapter(adapter);
     }
 
 
